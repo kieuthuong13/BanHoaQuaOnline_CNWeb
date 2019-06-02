@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.NOISANXUAT>
+
+@{
+    ViewBag.Title = "NOISANXUAT";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Add New", "_Edit_NOISANXUAT", new { controller = "Admin" })
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNoiSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QuocGia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DienThoai)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNoiSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QuocGia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DienThoai)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNoiSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuocGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DienThoai)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "_Edit_NOISANXUAT", new { controller = "Admin", id = item.MaNoiSX }) |
+                    @Html.ActionLink("Delete", "_Delete_NOISANXUAT", new { controller = "Admin", id = item.MaNoiSX })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

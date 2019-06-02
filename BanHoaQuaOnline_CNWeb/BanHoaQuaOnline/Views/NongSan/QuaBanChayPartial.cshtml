@@ -1,0 +1,23 @@
+﻿@using BanHoaQuaOnline.Models;
+@model List<NONGSAN>
+
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="List">
+            <a href="#"> <img src="@Url.Content("~/Content/HinhAnhSP/" +item.AnhMinhHoa)" alt="image name" width="150" height="60" /></a>
+            <p>
+                <strong href="#">
+                    @item.TenNongSan <br />
+                    @item.GiaBan VNĐ
+                </strong><br />
+                <a>
+                    Xem chi tiết
+                </a>
+            </p>
+        </div>
+
+    }
+}
+

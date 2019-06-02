@@ -1,0 +1,107 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.NHANVIEN>
+
+@{
+    ViewBag.Title = "NHANVIEN";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Add New", "_Edit_NHANVIEN", new { controller = "Admin" })
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenDangNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatKhau)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgaySinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GioiTinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoCMND)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DienThoai)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenDangNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatKhau)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgaySinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GioiTinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoCMND)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DienThoai)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.MaNhanVien)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNhanVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDangNhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GioiTinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoCMND)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DienThoai)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "_Edit_NHANVIEN", new { controller = "Admin", id = item.MaNhanVien }) |
+                    @Html.ActionLink("Delete", "_Delete_NHANVIEN", new { controller = "Admin", id = item.MaNhanVien })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

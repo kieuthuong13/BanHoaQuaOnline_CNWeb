@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.CTDONHANG>
+
+@{
+    ViewBag.Title = "CTDONHANG";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DONHANG.MaHoaDon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NONGSAN.TenNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DONHANG.MaHoaDon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NONGSAN.TenNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DONHANG.MaHoaDon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NONGSAN.TenNongSan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuong)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

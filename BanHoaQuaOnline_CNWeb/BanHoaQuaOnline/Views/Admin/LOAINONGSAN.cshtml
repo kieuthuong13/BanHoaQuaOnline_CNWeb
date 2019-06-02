@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.LOAINONGSAN>
+
+@{
+    ViewBag.Title = "LOAINONGSAN";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Add new", "_Edit_LOAINONGSAN", new { controller = "Admin" })
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HinhAnh)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "_Edit_LOAINONGSAN", new { controller = "Admin", id = item.MaLoai }) |
+                    @Html.ActionLink("Delete", "_Delete_LOAINONGSAN", new { controller = "Admin", id = item.MaLoai })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

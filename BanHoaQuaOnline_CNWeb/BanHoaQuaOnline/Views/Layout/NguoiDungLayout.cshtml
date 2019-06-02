@@ -1,0 +1,107 @@
+﻿
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Healthy Living - free css template</title>
+    <meta name="keywords" content="css templates, healthy living, diet, nutrition, fitness, web design" />
+    <meta name="description" content="Healthy Living - free CSS template provided by templatemo.com" />
+    <link href="~/Content/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div id="templatemo_wrapper">
+
+        <div id="templatemo_header">
+
+            <div id="site_title">
+                <h1>
+                    <a href="@Url.Action("Index", null, new { controller = "NongSan" })" class="current">
+                        <img src="~/Content/images/templatemo_logo.png" alt="Healthy Living" />
+                    </a>
+                </h1>
+            </div>
+
+            <div id="banner">
+                <h3>Exercise <br /><span>for your</span><br /> HEALTH</h3>
+            </div>
+
+        </div> <!-- end of header -->
+
+        <div id="templatemo_menu">
+
+            <ul>
+                <li><a href="@Url.Action("Index", null, new { controller = "NongSan" })" class="current">Trang chủ</a></li>
+                <li><a href="@Url.Action("HoaQuaNhap", null, new { controller = "NongSan" })">Quả nhâp</a></li>
+                <li><a href="@Url.Action("HoaQuaDacSan", null, new { controller = "NongSan" })">Đặc sản</a></li>
+                <li><a href="@Url.Action("RauCuSach", null, new { controller = "NongSan" })">Rau củ</a></li>
+                <li><a href="@Url.Action("DoKho", null, new { controller = "NongSan" })">Đồ khô</a></li>
+                <li><a href="@Url.Action("GioiThieu", null, new { controller = "User" })">Giới thiệu</a></li>
+                <li><a href="@Url.Action("DangKy", null, new { controller = "User" })">Đăng ký</a></li>
+                <li><a href="@Url.Action("LOGIN", null, new { controller = "Admin" })" class="last">Đăng nhập</a></li>
+            </ul>
+
+        </div> <!-- end of templatemo_menu -->
+
+        <div id="templatemo_main">
+
+            <div id="templatemo_content">
+                @RenderBody()
+
+            </div> <!-- end of content -->
+            <div id="templatemo_sidebar">
+                <div class="sidebar_box">
+                    <div class="header">
+                        <h3>Hoa quả bán chạy</h3>
+                    </div>
+
+                    <div class="content">
+                        @Html.Action("QuaBanChayPartial", "NongSan")
+                    </div>
+
+                    <div class="bottom"></div>
+                </div>
+
+                <div class="sidebar_box">
+                    <div class="header">
+                        <h3>Loại nông sản</h3>
+                    </div>
+
+                    <div class="content">
+                        @*chèn nông sản*@
+                        @Html.Action("LoaiMoiPartial", "NongSan")
+                    </div>
+
+                    <div class="bottom"></div>
+                </div>
+
+                <div class="sidebar_box">
+                    <div class="header">
+                        <h3>Thông tin mở cửa</h3>
+                    </div>
+
+                    <div class="content">
+                        <p>Thứ 2 - Thứ 7</p> <br />
+                        <p>07:00 - 22:00</p> <br />
+                        <p>Chủ nhật</p> <br />
+                        <p>07:00 - 20:00</p> <br />
+                        <p>_Hotline_</p> <br />
+                        <p>088 48 66 88</p> <br />
+
+                        <div class="cleaner"></div>
+                    </div>
+
+                    <div class="bottom"></div>
+
+                    <div class="cleaner"></div>
+                </div>
+            </div> <!-- end of sidebar -->
+
+            <div class="cleaner"></div>
+
+        </div> <!-- end of main-->
+        <div id="templatemo_footer">
+            Copyright © 2048 <a href="#">Your Company Name</a> |
+        </div> <!-- end of templatemo_footer -->
+    </div> <!-- end of wrapper -->
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.NONGSAN>
+
+@{
+    ViewBag.Title = "NONGSAN";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Add new", "_Edit_NONGSAN", new { controller = "Admin" })
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LOAINONGSAN.TenLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOISANXUAT.TenNoiSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnhMinhHoa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonViTinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuongCon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NhietDoBaoQuan)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LOAINONGSAN.TenLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOISANXUAT.TenNoiSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNongSan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnhMinhHoa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonViTinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuongCon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NhietDoBaoQuan)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNongSan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOAINONGSAN.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOISANXUAT.TenNoiSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNongSan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnhMinhHoa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaBan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonViTinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongCon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayNhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhietDoBaoQuan)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "_Edit_NONGSAN", new { controller = "Admin", id = item.MaNongSan }) |
+                    @Html.ActionLink("Delete", "_Delete_NONGSAN", new { controller = "Admin", id = item.MaNongSan })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

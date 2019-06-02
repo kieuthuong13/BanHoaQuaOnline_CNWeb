@@ -1,0 +1,92 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.DONHANG>
+
+@{
+    ViewBag.Title = "DONHANG";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Create New", "_Delete_DONHANG", new { Controller = "Admin" })
+    </p>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.KHACHHANG.TenKhachHang)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NHANVIEN.TenNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DaThanhToan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TinhTrangGiao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayDat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayGiao)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.KHACHHANG.TenKhachHang)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NHANVIEN.TenNhanVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DaThanhToan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TinhTrangGiao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayDat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayGiao)
+                </th>
+                <th>Hành động</th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KHACHHANG.TenKhachHang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NHANVIEN.TenNhanVien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaThanhToan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TinhTrangGiao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayGiao)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "_Edit_DONHANG", new { id = item.MaHoaDon }) |
+                    @Html.ActionLink("Delete", "_Delete_DONHANG", new { id = item.MaHoaDon })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

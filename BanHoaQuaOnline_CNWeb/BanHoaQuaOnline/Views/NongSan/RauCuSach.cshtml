@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BanHoaQuaOnline.Models.NONGSAN>
+
+@{
+    ViewBag.Title = "RauCuSach";
+    Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
+}
+
+<h2>Rau củ sạch nhập khẩu</h2>
+<div id="gallery">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="List">
+                <ul>
+                    <li>
+                        <div class="image_wrapper non_float_img">
+                            <a href="#"> <img src="@Url.Content("~/Content/HinhAnhSP/" +item.AnhMinhHoa)" alt="image name" width="60" height="60" /></a>
+                        </div>
+                        <h5>
+                            <strong href="#">
+                                @item.TenNongSan
+                            </strong><br />
+                            <a>
+                                Đơn vị tính : @item.DonViTinh
+
+                            </a><br />
+                            <strong>
+                                @item.GiaBan VNĐ
+                            </strong><br />
+                        </h5>
+                        <div class="button"><a href="#">Detail</a></div>
+                    </li>
+                </ul>
+            </div>
+        }
+    }
+    <div class="cleaner"></div>
+</div>
