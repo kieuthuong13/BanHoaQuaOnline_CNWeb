@@ -18,6 +18,7 @@ namespace BanHoaQuaOnline.Models
         [Key]
         public int MaNongSan { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string TenNongSan { get; set; }
 

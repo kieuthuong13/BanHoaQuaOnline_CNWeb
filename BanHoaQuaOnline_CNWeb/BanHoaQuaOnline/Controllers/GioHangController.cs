@@ -163,7 +163,7 @@ namespace BanHoaQuaOnline.Controllers
             //Kiểm tra đăng đăng nhập
             if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
             {
-                return RedirectToAction("DangKy", "User");
+                return RedirectToAction("DangNhap", "User");
             }
             //Kiểm tra giỏ hàng
             if (Session["GioHang"] == null)
@@ -182,13 +182,13 @@ namespace BanHoaQuaOnline.Controllers
             foreach (var item in gh)
             {
                 CTDONHANG ctDH = new CTDONHANG();
-                NONGSAN ns = new NONGSAN();
+                //NONGSAN ns = new NONGSAN();
                 ctDH.MaHoaDon = dh.MaHoaDon;
                 ctDH.MaNongSan = item.idMaQua;
                 ctDH.SoLuong = item.iSoLuong;
-                ns.GiaBan = (int)item.iDonGia;
+                ctDH.DonGia = (int)item.iDonGia;
                 db.CTDONHANGs.Add(ctDH);
-                db.NONGSANs.Add(ns);
+                //db.NONGSANs.Add(ns);
             }
             db.SaveChanges();
             return RedirectToAction("Index", "NongSan");

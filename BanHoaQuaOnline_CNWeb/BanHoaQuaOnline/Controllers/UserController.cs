@@ -53,7 +53,7 @@ namespace BanHoaQuaOnline.Controllers
             KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.TaiKhoan == TaiKhoan && n.MatKhau == MatKhau);
             if (kh != null)
             {
-                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công!";
+                ViewBag.ThongBao = "Đăng nhập thành công!";
                 Session["TaiKhoan"] = kh;
                 return View();
             }

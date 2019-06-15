@@ -21,6 +21,8 @@ namespace BanHoaQuaOnline.Models
 
         public int? SoLuong { get; set; }
 
+        public int? DonGia { get; set; }
+
         public virtual DONHANG DONHANG { get; set; }
 
         public virtual NONGSAN NONGSAN { get; set; }
