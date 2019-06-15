@@ -1,4 +1,4 @@
-﻿namespace BanHoaQuaOnline.Models
+namespace BanHoaQuaOnline.Models
 {
     using System;
     using System.Collections.Generic;
@@ -14,15 +14,13 @@
         {
             NONGSANs = new HashSet<NONGSAN>();
         }
-        [Display(Name = "Mã loại")]
+
         [Key]
         public int MaLoai { get; set; }
 
-        [Display(Name = "Tên loại")]
         [StringLength(100)]
         public string TenLoai { get; set; }
 
-        [Display(Name = "Hình ảnh")]
         [StringLength(1000)]
         public string HinhAnh { get; set; }
 

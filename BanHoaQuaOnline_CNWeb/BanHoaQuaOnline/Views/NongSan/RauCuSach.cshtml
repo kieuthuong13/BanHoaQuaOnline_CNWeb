@@ -28,7 +28,11 @@
                                 @item.GiaBan VNĐ
                             </strong><br />
                         </h5>
-                        <div class="button"><a href="#">Detail</a></div>
+                        @using (Html.BeginForm("AddGioHang", "GioHang", new { @idMaQua = item.MaNongSan, @strURL = Request.Url.ToString() }))
+                        {
+                            <input type="submit" style="cursor:pointer" value="Mua hàng &#xf07a;" id="btnGioHang" class="btn btn-primary">
+
+                        }
                     </li>
                 </ul>
             </div>

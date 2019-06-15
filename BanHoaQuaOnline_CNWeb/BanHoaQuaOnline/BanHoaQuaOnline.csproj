@@ -135,6 +135,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\NongSanController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -142,6 +143,7 @@
     </Compile>
     <Compile Include="Models\CTDONHANG.cs" />
     <Compile Include="Models\DONHANG.cs" />
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KHACHHANG.cs" />
     <Compile Include="Models\LOAINONGSAN.cs" />
     <Compile Include="Models\NHANVIEN.cs" />
@@ -2061,6 +2063,9 @@
     <Content Include="Views\Admin\_Edit_DONHANG.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\LOGIN.cshtml" />
+    <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
