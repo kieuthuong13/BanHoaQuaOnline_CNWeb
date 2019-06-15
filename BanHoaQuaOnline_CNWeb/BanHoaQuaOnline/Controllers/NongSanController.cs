@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 using BanHoaQuaOnline.Models;
+
 
 namespace BanHoaQuaOnline.Controllers
 {
@@ -11,26 +14,38 @@ namespace BanHoaQuaOnline.Controllers
     {
         QuanLyBanQua db = new QuanLyBanQua();
         // GET: NongSan
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.NONGSANs.ToList());
+            //tạo biến số sản phẩm trên trang
+            int pageSize = 10;
+            //Tạo biến số trang
+            int pageNumber = (page ?? 1);
+            return View(db.NONGSANs.OrderBy(n => n.TenNongSan).ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult HoaQuaNhap()
+        public ActionResult HoaQuaNhap(int? page)
         {
-            return View(db.NONGSANs.Where(n => n.MaLoai == 1).ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(db.NONGSANs.Where(n => n.MaLoai == 1).OrderBy(n => n.TenNongSan).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult HoaQuaDacSan()
+        public ActionResult HoaQuaDacSan(int? page)
         {
-            return View(db.NONGSANs.Where(n => n.MaLoai == 2).ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(db.NONGSANs.Where(n => n.MaLoai == 2).OrderBy(n => n.TenNongSan).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult RauCuSach()
+        public ActionResult RauCuSach(int? page)
         {
-            return View(db.NONGSANs.Where(n => n.MaLoai == 3).ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(db.NONGSANs.Where(n => n.MaLoai == 3).OrderBy(n => n.TenNongSan).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult DoKho()
+        public ActionResult DoKho(int? page)
         {
-            return View(db.NONGSANs.Where(n => n.MaLoai == 4).ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(db.NONGSANs.Where(n => n.MaLoai == 4).OrderBy(n => n.TenNongSan).ToPagedList(pageNumber, pageSize));
         }
         public PartialViewResult LoaiMoiPartial()
         {

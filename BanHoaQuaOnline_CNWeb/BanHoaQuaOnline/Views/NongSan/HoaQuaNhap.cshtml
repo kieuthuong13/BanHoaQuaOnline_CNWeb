@@ -1,4 +1,8 @@
-﻿@model IEnumerable<BanHoaQuaOnline.Models.NONGSAN>
+﻿@using BanHoaQuaOnline.Models;
+@using PagedList.Mvc;
+@using PagedList;
+
+@model PagedList<BanHoaQuaOnline.Models.NONGSAN>
 
 @{
     ViewBag.Title = "HoaQuaNhap";
@@ -42,3 +46,13 @@
     }
     <div class="cleaner"></div>
 </div>
+@* Tạo link liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("HoaQuaNhap", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
