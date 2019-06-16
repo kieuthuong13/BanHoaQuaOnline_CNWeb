@@ -53,6 +53,11 @@ namespace BanHoaQuaOnline.Controllers
             return PartialView(lstLoaiMoi);
         }
 
+        public PartialViewResult QuaBanChayPartial()
+        {
+            var lstQuaMoi = db.NONGSANs.Take(3).ToList();
+            return PartialView(lstQuaMoi);
+        }
         //public PartialViewResult QuaMoiPartial()
         //{
         //    //cách 1 :
@@ -86,44 +91,36 @@ namespace BanHoaQuaOnline.Controllers
         //    return PartialView(db.NONGSANs.Where(n => n.MaLoai == 4).ToList());
         //}
 
-        public PartialViewResult QuaBanChayPartial()
-        {
-            var lstQuaMoi = db.NONGSANs.Take(3).ToList();
-            return PartialView(lstQuaMoi);
-        }
-
-
-
         //ví dụ của thầy
 
-        public ActionResult List()
-        {
-            List<NONGSAN> lst = db.Database.SqlQuery<NONGSAN>("select + " +
-            "From nongsan pro" + "Left join ").ToList<NONGSAN>();
-            return View(lst);
-        }
+        //public ActionResult List()
+        //{
+        //    List<NONGSAN> lst = db.Database.SqlQuery<NONGSAN>("select + " +
+        //    "From nongsan pro" + "Left join ").ToList<NONGSAN>();
+        //    return View(lst);
+        //}
         //thên
-        public ActionResult Add(NONGSAN cat)
-        {
-            db.NONGSANs.Add(cat);
-            db.SaveChanges();
-            return View();
-        }
+        //public ActionResult Add(NONGSAN cat)
+        //{
+        //    db.NONGSANs.Add(cat);
+        //    db.SaveChanges();
+        //    return View();
+        //}
         //sửa
-        public ActionResult Edit(NONGSAN cat)
-        {
-            NONGSAN ns = db.NONGSANs.Find(cat.MaNongSan);
-            ns.TenNongSan = cat.TenNongSan;
+        //public ActionResult Edit(NONGSAN cat)
+        //{
+        //    NONGSAN ns = db.NONGSANs.Find(cat.MaNongSan);
+        //    ns.TenNongSan = cat.TenNongSan;
 
-            db.SaveChanges();
-            return View();
-        }
+        //    db.SaveChanges();
+        //    return View();
+        //}
         //xóa
-        public ActionResult Delete(int cat)
-        {
-            NONGSAN ns = db.NONGSANs.Find(cat);
-            db.NONGSANs.Remove(ns);
-            return View();
-        }
+        //public ActionResult Delete(int cat)
+        //{
+        //    NONGSAN ns = db.NONGSANs.Find(cat);
+        //    db.NONGSANs.Remove(ns);
+        //    return View();
+        //}
     }
 }
