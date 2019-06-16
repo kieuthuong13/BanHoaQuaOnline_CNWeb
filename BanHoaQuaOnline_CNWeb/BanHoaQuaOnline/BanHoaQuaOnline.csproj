@@ -137,6 +137,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\NongSanController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1749,6 +1750,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\jquery.ennui.contentslider.css" />
+    <Content Include="Content\css\NguoiDungCss.css" />
     <Content Include="Content\css\templatemo_style.css" />
     <Content Include="Content\HinhAnhSP\000001.jpg" />
     <Content Include="Content\HinhAnhSP\000002.jpg" />
@@ -1846,6 +1848,7 @@
     <Content Include="Content\HinhAnhSP\loai3.jpg" />
     <Content Include="Content\HinhAnhSP\loai4.jpg" />
     <Content Include="Content\images\fireworks_source.png" />
+    <Content Include="Content\images\imgSearch.png" />
     <Content Include="Content\images\list_icon.png" />
     <Content Include="Content\images\templatemo_body.jpg" />
     <Content Include="Content\images\templatemo_button.png" />
@@ -2107,6 +2110,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

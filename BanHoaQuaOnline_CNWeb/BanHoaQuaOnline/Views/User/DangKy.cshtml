@@ -5,12 +5,13 @@
     Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
 }
 
-<div style="margin-left:120px">
+<div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
+            <h2></h2>
             <h4>THÔNG TIN KHáCH HÀNG</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })

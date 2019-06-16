@@ -6,6 +6,7 @@
     <meta name="keywords" content="css templates, healthy living, diet, nutrition, fitness, web design" />
     <meta name="description" content="Healthy Living - free CSS template provided by templatemo.com" />
     <link href="~/Content/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/NguoiDungCss.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -43,6 +44,18 @@
         </div> <!-- end of templatemo_menu -->
 
         <div id="templatemo_main">
+
+            <div id="txtTimKiem">
+                @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                {
+                    @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập vào từ khóa cần tìm ..." })
+                    @*Chèn vào image button hình ảnh*@
+                    <div id="divHinhAnhTimKiem">
+                        <button type="submit"><img src="~/Content/images/imgSearch.png" /></button>
+                    </div>
+                }
+
+            </div>
 
             <div id="templatemo_content">
                 @RenderBody()

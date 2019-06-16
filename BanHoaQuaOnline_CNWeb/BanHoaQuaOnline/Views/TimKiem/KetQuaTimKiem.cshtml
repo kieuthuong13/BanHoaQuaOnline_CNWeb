@@ -1,14 +1,13 @@
 ﻿@using BanHoaQuaOnline.Models;
 @using PagedList.Mvc;
-@using PagedList;
-
-@model PagedList<BanHoaQuaOnline.Models.NONGSAN>
+@model PagedList.IPagedList<NONGSAN>
 
 @{
-    ViewBag.Title = "HoaQuaNhap";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Layout/NguoiDungLayout.cshtml";
 }
-
+<h2></h2>
+<h2>Kết quả tìm kiếm</h2>
 <div id="gallery">
     @{
         foreach (var item in Model)
@@ -46,7 +45,7 @@
 @* Tạo link liên kết các trang*@
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
 <div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("HoaQuaNhap", new { page = page }))
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
 </div>
 <style>
     .MenuTrang li {

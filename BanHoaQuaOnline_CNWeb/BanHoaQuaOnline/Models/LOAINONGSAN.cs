@@ -1,7 +1,8 @@
-namespace BanHoaQuaOnline.Models
+﻿namespace BanHoaQuaOnline.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -15,12 +16,13 @@ namespace BanHoaQuaOnline.Models
             NONGSANs = new HashSet<NONGSAN>();
         }
 
+        [DisplayName("Mã Loại")]
         [Key]
         public int MaLoai { get; set; }
-
+        [DisplayName("Tên Loại")]
         [StringLength(100)]
         public string TenLoai { get; set; }
-
+        [DisplayName("Hình ảnh")]
         [StringLength(1000)]
         public string HinhAnh { get; set; }
 

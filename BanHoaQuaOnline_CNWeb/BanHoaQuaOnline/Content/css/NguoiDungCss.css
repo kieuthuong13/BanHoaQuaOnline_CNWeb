@@ -1,0 +1,26 @@
+﻿
+/*css divTimKiem*/
+#txtTimKiem {
+    float: left;
+}
+
+    #txtTimKiem input {
+        height: 35;
+        width: 450;
+    }
+
+#divHinhAnhTimKiem button:hover {
+    background-color: rgba(0,0,0,.5);
+}
+/*css image button hình ảnh tìm kiếm*/
+#divHinhAnhTimKiem button {
+    float: right;
+    margin-right: -60px;
+    padding: 0 10px 0 10px;
+    background-color: #c39f56;
+}
+
+#divHinhAnhTimKiem img {
+    width: 30px;
+    height: 30px;
+}
